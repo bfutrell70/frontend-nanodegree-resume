@@ -1,12 +1,11 @@
-var bio = new {
+var bio = {
     "name" : "Brian Futrell",
     "role" : "Web Developer",
     "contactInfo" : ["919-741-1959", "4201 Ferriday Court Raleigh, NC 27616", "bfutrel@gmail.com"],
-    "pictureUrl" : "/images/fry.jpg",
+    "pictureUrl" : "file://C:/Users/Brian/Source/udacity/frontend-nanodegree-resume/images/fry.jpg",
     "welcomeMessage" : "Nice to meet you!",
     "skills" : ["C#", "ASP.NET", "SQL Server"]
 };
-
 
 var formattedName;
 var formattedRole;
@@ -26,4 +25,4 @@ formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").prepend(formattedImage);
-$("#header").append(formattedWelcomeMessage);
+$("#header").prepend(formattedWelcomeMessage);
