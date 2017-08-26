@@ -21,9 +21,7 @@ var formattedEmail;
 var formattedMobile;
 var formattedGitHub;
 var formattedLocation;
-
-//var name = "Brian Futrell";
-//var role = "Web Developer";
+var formattedSkills;
 
 formattedName = HTMLheaderName.replace("%data%", bio.name);
 formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -34,6 +32,8 @@ formattedEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
 formattedMobile = HTMLmobile.replace("%data%", bio.contactInfo.mobile);
 formattedGitHub = HTMLgithub.replace("%data%", bio.contactInfo.github);
 formattedLocation = HTMLlocation.replace("%data%", bio.contactInfo.location);
+
+formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 
 // since the role and name need to be added before anything else prepend the role
 // first, then the name so that the name will appear first.
@@ -47,4 +47,4 @@ $("#header").append(formattedEmail);
 $("#header").append(formattedGitHub);
 $("#header").append(formattedLocation);
 $("#header").append(formattedWelcomeMessage);
-
+$("#header").append(formattedSkills);
