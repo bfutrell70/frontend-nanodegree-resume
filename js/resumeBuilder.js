@@ -7,7 +7,7 @@ var bio = {
         email: "bfutrel@gmail.com",
         github: "bfutrell70"
     },
-    "pictureUrl" : "file://C:/Users/wfutr/Source/udacity/frontend-nanodegree-resume/images/fry.jpg",
+    "bioPic" : "images/fry.jpg",
     "welcomeMessage" : "Nice to meet you!",
     "skills" : ["C#", "ASP.NET", "SQL Server"]
 };
@@ -25,7 +25,7 @@ var formattedSkills;
 
 formattedName = HTMLheaderName.replace("%data%", bio.name);
 formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-formattedImage = HTMLbioPic.replace("%data%", bio.pictureUrl);
+formattedImage = HTMLbioPic.replace("%data%", bio.bioPic);
 formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 formattedEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
@@ -40,11 +40,15 @@ formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
-$("#header").append(formattedImage);
+
 
 $("#header").append(formattedMobile);
 $("#header").append(formattedEmail);
 $("#header").append(formattedGitHub);
 $("#header").append(formattedLocation);
+
+$("#header").append(formattedImage);
+
 $("#header").append(formattedWelcomeMessage);
+$("#header").append(HTMLskillsStart);
 $("#header").append(formattedSkills);
