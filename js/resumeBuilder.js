@@ -40,7 +40,16 @@ formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
+var work = {};
+work.position = "Web Developer";
+work.employer = "StayOnline Corp";
+work.yearsWorked = 4;
+work.city = "Creedmoor";
 
+var education = {};
+education["name"] = "Wake Tech Community College";
+education["years"] = "1998-2000";
+education["city"] = "Raleigh, Garner";
 
 $("#header").append(formattedMobile);
 $("#header").append(formattedEmail);
@@ -52,3 +61,12 @@ $("#header").append(formattedImage);
 $("#header").append(formattedWelcomeMessage);
 $("#header").append(HTMLskillsStart);
 $("#header").append(formattedSkills);
+
+var formattedWorkPosition;
+var formattedSchoolName;
+
+formattedWorkPosition = HTMLworkTitle.replace("%data%",work.position);
+formattedSchoolName = HTMLschoolName.replace("%data%", education["name"]);
+$("#header").append(formattedWorkPosition);
+$("#header").append(formattedSchoolName);
+ 
