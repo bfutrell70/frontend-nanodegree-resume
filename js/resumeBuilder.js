@@ -73,6 +73,12 @@ var projects = {
             "dates" : "2016-2017",
             "description" : "Major update of Stayonline's Molded Cord configurator",
             "images" : [ "image1.jpg", "image2.jpg" ]
+        },
+		{
+            "title" : "Drawing PDF Generator",
+            "dates" : "2017",
+            "description" : "Create a cord drawing PDF based on user selection",
+            "images" : [ "image1.jpg", "image2.jpg" ]
         }
     ]
 };
@@ -161,7 +167,11 @@ if (bio.skills.length > 0)
     $("#header").append(formattedSkills);
 }
 
-
+// Lesson 5, Quiz 4: For-In loops
+for (job in work)
+{
+	
+}
 
 // formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 
