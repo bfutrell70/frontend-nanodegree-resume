@@ -150,7 +150,7 @@ var education = {
 };
 
 
-if (bio.skills.length !== 0)
+if (bio.skills.length > 0)
 {
     var formattedSkills;
     formattedSkills = HTMLskills.replace("%data%", bio.skills.join(", "));
