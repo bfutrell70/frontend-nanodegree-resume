@@ -152,13 +152,13 @@ var education = {
 
 if (bio.skills.length > 0)
 {
-    var formattedSkills;
-    formattedSkills = HTMLskills.replace("%data%", bio.skills.join(", "));
-    $("#header").prepend(formattedSkills);
-
     var formattedName;
     formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
+
+    var formattedSkills;
+    formattedSkills = HTMLskills.replace("%data%", bio.skills.join(", "));
+    $("#header").append(formattedSkills);
 }
 
 
