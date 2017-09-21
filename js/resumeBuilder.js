@@ -168,9 +168,14 @@ if (bio.skills.length > 0)
 }
 
 // Lesson 5, Quiz 4: For-In loops
-for (job in work)
+for (job in work.jobs)
 {
-	
+    if (work.hasOwnProperty(job))
+    {
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
+    }
 }
 
 // formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
