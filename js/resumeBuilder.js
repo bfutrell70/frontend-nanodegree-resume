@@ -168,12 +168,21 @@ if (bio.skills.length > 0)
 }
 
 // Lesson 5, Quiz 4: For-In loops
+// 1) Write a for-in loop that iterates over all the jobs in your work object and
+//    .append()s a new HTMLworkStart element for each one and ...
+// 2) formats each job's employer with HTMLworkEmployer and each job title with
+//    HTMLworkTitle ...
+// 3) and .append()s a concatenation of employer and title each to the element with
+//    class 'work-entry:last'.
 for (job in work.jobs)
 {
     if (work.hasOwnProperty(job))
     {
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+
+        console.log(formattedEmployer + " " + formattedTitle);
+
         $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
     }
 }
