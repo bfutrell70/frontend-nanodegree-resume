@@ -1,7 +1,6 @@
 {
     "version": "0.2.0",
-    "configurations": [
-        {
+    "configurations": [{
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome nanodegree",
@@ -11,8 +10,8 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
+            "name": "Launch Chrome nanodegree-tablet",
+            "url": "file:///D:/SourceRepos/udacity/frontend-nanodegree-resume/index.html",
             "webRoot": "${workspaceRoot}"
         },
         {
