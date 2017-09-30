@@ -3,8 +3,15 @@
     "configurations": [{
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome nanodegree",
+            "name": "Launch Chrome nanodegree-wfutr",
             "url": "file:///C:/Users/wfutr/Source/udacity/frontend-nanodegree-resume/index.html",
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome nanodegree-Brian",
+            "url": "file:///C:/Users/brian/Source/udacity/frontend-nanodegree-resume/index.html",
             "webRoot": "${workspaceRoot}"
         },
         {

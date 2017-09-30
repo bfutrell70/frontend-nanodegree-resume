@@ -174,7 +174,7 @@ if (bio.skills.length > 0)
 //    HTMLworkTitle ...
 // 3) and .append()s a concatenation of employer and title each to the element with
 //    class 'work-entry:last'.
-for (job in work.jobs)
+for (var job in work.jobs)
 {
     if (work.hasOwnProperty(job))
     {
