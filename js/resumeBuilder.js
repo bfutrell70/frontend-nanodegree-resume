@@ -163,8 +163,11 @@ if (bio.skills.length > 0)
     $("#header").prepend(formattedName);
 
     var formattedSkills;
-    formattedSkills = HTMLskills.replace("%data%", bio.skills.join(", "));
-    $("#header").append(formattedSkills);
+    for (var i = 0; i < bio.skills.length; i++)
+    {
+        formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#header").append(formattedSkills);
+    }
 }
 
 // Lesson 5, Quiz 4: For-In loops
@@ -174,18 +177,24 @@ if (bio.skills.length > 0)
 //    HTMLworkTitle ...
 // 3) and .append()s a concatenation of employer and title each to the element with
 //    class 'work-entry:last'.
-for (job in work.jobs)
+if (work.jobs.length > 0)
 {
-    if (work.hasOwnProperty(job))
+    $('#')
+    for (job in work.jobs)
     {
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-
-        console.log(formattedEmployer + " " + formattedTitle);
-
-        $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
+        if (work.hasOwnProperty(job))
+        {
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    
+            console.log(formattedEmployer + " " + formattedTitle);
+    
+            // in index.html there is no element with a class of 'work-entry'....
+            $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
+        }
     }
 }
+
 
 // formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 
