@@ -177,11 +177,7 @@ if (bio.skills.length > 0)
 //    HTMLworkTitle ...
 // 3) and .append()s a concatenation of employer and title each to the element with
 //    class 'work-entry:last'.
-<<<<<<< HEAD
-if (work.jobs.length > 0)
-=======
 for (var job in work.jobs)
->>>>>>> 7ba7b6d7427c2b348a6ef55bbefdfa1468a07ace
 {
     $('#')
     for (job in work.jobs)
