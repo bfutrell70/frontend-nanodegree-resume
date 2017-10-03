@@ -167,6 +167,8 @@ if (bio.skills.length > 0)
     {
         formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
         $("#header").append(formattedSkills);
+
+        console.log('Skill ' + bio.skills[i] + ' added!');
     }
 }
 
@@ -177,24 +179,25 @@ if (bio.skills.length > 0)
 //    HTMLworkTitle ...
 // 3) and .append()s a concatenation of employer and title each to the element with
 //    class 'work-entry:last'.
-for (var job in work.jobs)
-{
-    $('#')
-    for (job in work.jobs)
+// if (work.hasOwnProperty(jobs))
+// {
+    $('#workExperience').append(HTMLworkStart);
+    for (var eachJob in work.jobs)
     {
-        if (work.hasOwnProperty(job))
-        {
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        console.log(work.jobs[eachJob].employer + ' added!');
+
+        // if (work.hasOwnProperty(eachJob))
+        // {
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[eachJob].employer);
+            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[eachJob].title);
     
             console.log(formattedEmployer + " " + formattedTitle);
     
             // in index.html there is no element with a class of 'work-entry'....
             $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
-        }
+        //}
     }
-}
-
+//}
 
 // formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 
