@@ -162,11 +162,15 @@ if (bio.skills.length > 0)
     formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
 
+    // 'Skills at a glance'
+    // also adds a UL with an ID of 'skills' and a class of 'flex-column'
+    $("#header").append(HTMLskillsStart);
+
     var formattedSkills;
     for (var i = 0; i < bio.skills.length; i++)
     {
         formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#header").append(formattedSkills);
+        $("#skills").append(formattedSkills);
 
         console.log('Skill ' + bio.skills[i] + ' added!');
     }
