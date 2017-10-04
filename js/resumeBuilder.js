@@ -169,10 +169,13 @@ if (bio.skills.length > 0)
     var formattedSkill;
     for (var i = 0; i < bio.skills.length; i++)
     {
-        formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#skills").append(formattedSkill);
-
-        console.log('Skill ' + bio.skills[i] + ' added!');
+        //if (bio.skills.hasOwnProperty(i))
+        //{
+            formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+            $("#skills").append(formattedSkill);
+        //}
+        
+        //console.log('Skill ' + bio.skills[i] + ' added!');
     }
 }
 
@@ -188,17 +191,24 @@ if (bio.skills.length > 0)
     $('#workExperience').append(HTMLworkStart);
     for (var eachJob in work.jobs)
     {
-        console.log(work.jobs[eachJob].employer + ' added!');
+        //console.log(work.jobs[eachJob].employer + ' added!');
 
         if (work.jobs.hasOwnProperty(eachJob))
         {
             var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[eachJob].employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[eachJob].title);
     
-            console.log(formattedEmployer + " " + formattedTitle);
+            //console.log(formattedEmployer + " " + formattedTitle);
     
             // in index.html there is no element with a class of 'work-entry'....
             $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
+            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[eachJob].dates);
+            $(".work-entry:last").append(formattedDates);
+            // var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[eachJob].location);
+            // $(".work-entry:last").append(formattedLocation);
+
+            var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[eachJob].description);
+            $(".work-entry:last").append(formattedDescription);
         }
     }
 //}
