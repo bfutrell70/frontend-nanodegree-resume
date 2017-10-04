@@ -166,11 +166,11 @@ if (bio.skills.length > 0)
     // also adds a UL with an ID of 'skills' and a class of 'flex-column'
     $("#header").append(HTMLskillsStart);
 
-    var formattedSkills;
+    var formattedSkill;
     for (var i = 0; i < bio.skills.length; i++)
     {
-        formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#skills").append(formattedSkills);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
 
         console.log('Skill ' + bio.skills[i] + ' added!');
     }
@@ -190,8 +190,8 @@ if (bio.skills.length > 0)
     {
         console.log(work.jobs[eachJob].employer + ' added!');
 
-        // if (work.hasOwnProperty(eachJob))
-        // {
+        if (work.jobs.hasOwnProperty(eachJob))
+        {
             var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[eachJob].employer);
             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[eachJob].title);
     
@@ -199,7 +199,7 @@ if (bio.skills.length > 0)
     
             // in index.html there is no element with a class of 'work-entry'....
             $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
-        //}
+        }
     }
 //}
 
