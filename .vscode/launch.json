@@ -1,6 +1,15 @@
 {
     "version": "0.2.0",
-    "configurations": [{
+"configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome nanodegree-linux",
+            "url": "file:////home/brian/source/udacity/frontend-nanodegree-resume/index.html",
+            "webRoot": "${workspaceRoot}",
+            "runtimeExecutable": "/usr/bin/chromium-browser"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome nanodegree-wfutr",
