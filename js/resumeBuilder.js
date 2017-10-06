@@ -216,6 +216,13 @@ function displayWork()
 
 displayWork();
 
+$(document).click(function(loc) {
+    var xLoc = loc.screenX;
+    var yLoc = loc.screenY;
+    logClicks(xLoc, yLoc);
+  }
+);
+
 // formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 
 // var bio = {
