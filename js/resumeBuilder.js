@@ -12,7 +12,7 @@ var work = {
             "title" : "Software Developer/Support Technician",
             "location" : "Raleigh, NC",
             "dates" : "1995-2012",
-            "description" : "desktop software developer, maintained web site, supported custom software"
+            "description" : "Wrote custom software that interfaced with Peachtree Accounting, Peachtree Complete Accounting, Peachtree Quantum and Sage 50 to allow users to submit W-2, 1099-MISC, direct deposit ECH, and quarterly unemployemt reports electronially. Also wrote software to create payroll reports that comply with the Davis-Bacon Act. "
         },
         {
             "employer" : "Stay Online Corp.",
@@ -179,15 +179,16 @@ if (bio.skills.length > 0)
     }
 }
 
-// Lesson 5, Quiz 4: For-In loops
-// 1) Write a for-in loop that iterates over all the jobs in your work object and
-//    .append()s a new HTMLworkStart element for each one and ...
-// 2) formats each job's employer with HTMLworkEmployer and each job title with
-//    HTMLworkTitle ...
-// 3) and .append()s a concatenation of employer and title each to the element with
-//    class 'work-entry:last'.
-// if (work.hasOwnProperty(jobs))
-// {
+function displayWork()
+{
+    // Lesson 5, Quiz 4: For-In loops
+    // 1) Write a for-in loop that iterates over all the jobs in your work object and
+    //    .append()s a new HTMLworkStart element for each one and ...
+    // 2) formats each job's employer with HTMLworkEmployer and each job title with
+    //    HTMLworkTitle ...
+    // 3) and .append()s a concatenation of employer and title each to the element with
+    //    class 'work-entry:last'.
+
     $('#workExperience').append(HTMLworkStart);
     for (var eachJob in work.jobs)
     {
@@ -211,7 +212,9 @@ if (bio.skills.length > 0)
             $(".work-entry:last").append(formattedDescription);
         }
     }
-//}
+}
+
+displayWork();
 
 // formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
 
