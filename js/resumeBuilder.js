@@ -87,7 +87,7 @@ var bio = {
     "name" : "Brian Futrell",
     "role" : "Web Developer",
     "welcomeMessage" : "Nice to meet you!",
-    "biopic" : "image2.jpg",
+    "biopic" : "images/fry.jpg",
     "contacts" : {
         "mobile" : "111-222-3333",
         "email" : "bfutrel@gmail.com",
@@ -159,27 +159,31 @@ var education = {
 
 if (bio.skills.length > 0)
 {
-    var formattedName;
-    formattedName = HTMLheaderName.replace("%data%", bio.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#header").append(formattedRole);
+
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
 
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    // var formattedImage = HTMLbioPic.replace("%data%", bio.bioPic);
-    // var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    
+    var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
+    $("#header").append(formattedImage);
+
+    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#header").append(formattedWelcomeMessage);
+
     // var formattedEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
     // var formattedMobile = HTMLmobile.replace("%data%", bio.contactInfo.mobile);
     // var formattedGitHub = HTMLgithub.replace("%data%", bio.contactInfo.github);
     // var formattedLocation = HTMLlocation.replace("%data%", bio.contactInfo.location);
-    $("#header").append(formattedRole);
+    
     // $("#header").append(formattedMobile);
     // $("#header").append(formattedEmail);
     // $("#header").append(formattedGitHub);
     // $("#header").append(formattedLocation);
     
-    // $("#header").append(formattedImage);
     
-    // $("#header").append(formattedWelcomeMessage);
+    
+    
     
 
     // 'Skills at a glance'
