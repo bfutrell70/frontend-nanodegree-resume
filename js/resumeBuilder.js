@@ -169,13 +169,8 @@ if (bio.skills.length > 0)
     var formattedSkill;
     for (var i = 0; i < bio.skills.length; i++)
     {
-        //if (bio.skills.hasOwnProperty(i))
-        //{
-            formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-            $("#skills").append(formattedSkill);
-        //}
-        
-        //console.log('Skill ' + bio.skills[i] + ' added!');
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
     }
 }
 
