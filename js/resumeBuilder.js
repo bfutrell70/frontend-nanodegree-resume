@@ -217,8 +217,8 @@ function displayWork()
 displayWork();
 
 $(document).click(function(loc) {
-    var xLoc = loc.screenX;
-    var yLoc = loc.screenY;
+    var xLoc = loc.pageX;
+    var yLoc = loc.pageY;
     logClicks(xLoc, yLoc);
   }
 );
