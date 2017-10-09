@@ -159,32 +159,37 @@ var education = {
 
 if (bio.skills.length > 0)
 {
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").append(formattedRole);
+    // ----------------------------------------------------------
+    // NOTE: #header contains a <ul> with an ID of 'topContacts'
+    //       before anything else is added!
+    // ----------------------------------------------------------
 
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    //$("#topContacts").apppend(formattedEmail);
+
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    // $("#topContacts").apppend(formattedMobile);
+    
+    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+    // $("#topContacts").apppend(formattedGitHub);
+
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    // $("#topContacts").apppend(formattedLocation);
+
+    // role + <HR>
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#header").prepend(formattedRole);
+
+    // name before role
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
 
+    // image after role
     var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedImage);
 
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcomeMessage);
-
-    // var formattedEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
-    // var formattedMobile = HTMLmobile.replace("%data%", bio.contactInfo.mobile);
-    // var formattedGitHub = HTMLgithub.replace("%data%", bio.contactInfo.github);
-    // var formattedLocation = HTMLlocation.replace("%data%", bio.contactInfo.location);
-    
-    // $("#header").append(formattedMobile);
-    // $("#header").append(formattedEmail);
-    // $("#header").append(formattedGitHub);
-    // $("#header").append(formattedLocation);
-    
-    
-    
-    
-    
 
     // 'Skills at a glance'
     // also adds a UL with an ID of 'skills' and a class of 'flex-column'
