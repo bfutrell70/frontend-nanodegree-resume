@@ -2,6 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch Firefox nanodegree - Linux - index.html",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome nanodegree-linux",
