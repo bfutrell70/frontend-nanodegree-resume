@@ -13,8 +13,7 @@
             "request": "launch",
             "name": "Launch Chrome nanodegree-linux",
             "file": "/home/brian/source/udacity/frontend-nanodegree-resume/index.html",
-            "webRoot": "${workspaceRoot}",
-            "runtimeExecutable": "/usr/bin/chromium-browser"
+            "webRoot": "${workspaceRoot}"
         },
         {
             "type": "chrome",
