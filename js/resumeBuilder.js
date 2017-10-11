@@ -203,6 +203,26 @@ if (bio.skills.length > 0)
     }
 }
 
+$('#main').append(internationalizeButton);
+
+
+
+function inName() {
+    var finalName = bio.name;
+
+    // split by the space into 2 strings
+    // proper case the first name, upper case the last name
+    var index = bio.name.indexOf(" ");
+    var firstName = bio.name.slice(0, index).toLowerCase();
+    var lastName = bio.name.slice(index + 1).toUpperCase();
+    
+    firstName = firstName.slice(0, 1).toUpperCase() + firstName.slice(1);
+    
+    finalName = firstName + " " + lastName;
+
+    bio.name = finalName;
+}
+
 function displayWork()
 {
     // Lesson 5, Quiz 4: For-In loops
