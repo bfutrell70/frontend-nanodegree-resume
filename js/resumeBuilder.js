@@ -164,17 +164,17 @@ if (bio.skills.length > 0)
     //       before anything else is added!
     // ----------------------------------------------------------
 
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    //$("#topContacts").apppend(formattedEmail);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $("#topContacts").prepend(formattedLocation);
+
+    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+    $("#topContacts").prepend(formattedGitHub);
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    // $("#topContacts").apppend(formattedMobile);
-    
-    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-    // $("#topContacts").apppend(formattedGitHub);
+    $("#topContacts").prepend(formattedMobile);
 
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    // $("#topContacts").apppend(formattedLocation);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    $("#topContacts").prepend(formattedEmail);
 
     // role + <HR>
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
