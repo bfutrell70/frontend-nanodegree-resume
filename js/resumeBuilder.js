@@ -82,7 +82,8 @@ var projects = {
         }
     ],
     "display" : function() {
-
+        // .append items to '#projects' to allow them to appear under the header.
+        // each project will start with a HTMLprojectStart.
     }
 };
 
