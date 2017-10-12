@@ -30,55 +30,55 @@ var projects = {
             "title" : "CertPay Wizard",
             "dates" : "1998-2012",
             "description" : "Certified Payroll reporting for Peachtree Accounting/Sage 50 accounting software",
-            "images" : [ "gears.jpg", "lights.jpg" ]
+            "images" : [ "images/gears.jpg", "images/lights.jpg" ]
         },
         {
             "title" : "Direct Deposit Wizard",
             "dates" : "1998-2012",
             "description" : "Direct Deposit ACH file creation for Peachtree Accounting/Sage 50 accounting software",
-            "images" : [ "lights.jpg", "fry.jpg" ]
+            "images" : [ "images/lights.jpg", "images/fry.jpg" ]
         },
         {
             "title" : "WizMag W-2",
             "dates" : "1998-2012",
             "description" : "SSA W-2 wage reporting for Peachtree Accounting/Sage 50 accounting software",
-            "images" : [ "fry.jpg", "projectnotes.jpg" ]
+            "images" : [ "images/fry.jpg", "images/projectnotes.jpg" ]
         },
         {
             "title" : "WizMag 1099-MISC",
             "dates" : "1998-2012",
             "description" : "IRS 1099-MISC reporting for Peachtree Accounting/Sage 50 accounting software",
-            "images" : [ "gears.jpg", "fry.jpg" ]
+            "images" : [ "images/gears.jpg", "images/fry.jpg" ]
         },
         {
             "title" : "WizMag SUTA",
             "dates" : "1998-2012",
             "description" : "Quarterly state wage/unemployment reporting for Peachtree Accounting/Sage 50 accounting software",
-            "images" : [ "gears.jpg", "gears.jpg" ]
+            "images" : [ "images/gears.jpg", "images/gears.jpg" ]
         },
         {
             "title" : "EET Reporting",
             "dates" : "2016-2017",
             "description" : "Reporting of credit card purchases from eu.stayonline.com to Czech tax authority",
-            "images" : [ "lights.jpg", "lights.jpg" ]
+            "images" : [ "images/lights.jpg", "images/lights.jpg" ]
         },
         {
             "title" : "PDU Whip Configurator",
             "dates" : "2015-2016",
             "description" : "A complete rewrite of StayOnline's PDU Whip configurator",
-            "images" : [ "projectnotes.jpg", "gears.jpg" ]
+            "images" : [ "images/projectnotes.jpg", "images/gears.jpg" ]
         },
         {
             "title" : "Molded Cord Update",
             "dates" : "2016-2017",
             "description" : "Major update of Stayonline's Molded Cord configurator",
-            "images" : [ "fry.jpg", "projectnotes.jpg" ]
+            "images" : [ "images/fry.jpg", "images/projectnotes.jpg" ]
         },
 		{
             "title" : "Drawing PDF Generator",
             "dates" : "2017",
             "description" : "Create a cord drawing PDF based on user selection",
-            "images" : [ "gears.jpg", "lights.jpg" ]
+            "images" : [ "images/gears.jpg", "images/lights.jpg" ]
         }
     ],
     "display" : function() {
