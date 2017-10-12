@@ -12,7 +12,7 @@ var work = {
             "title" : "Software Developer/Support Technician",
             "location" : "Raleigh, NC",
             "dates" : "1995-2012",
-            "description" : "Wrote custom software that interfaced with Peachtree Accounting, Peachtree Complete Accounting, Peachtree Quantum and Sage 50 to allow users to submit W-2, 1099-MISC, direct deposit ECH, and quarterly unemployemt reports electronially. Also wrote software to create payroll reports that comply with the Davis-Bacon Act. "
+            "description" : "Wrote custom software that interfaced with Peachtree Accounting, Peachtree Complete Accounting, Peachtree Quantum and Sage 50 to allow users to submit W-2, 1099-MISC, direct deposit ECH, and quarterly unemployemt reports electronically. Also wrote software to create payroll reports that comply with the Davis-Bacon Act. "
         },
         {
             "employer" : "Stay Online Corp.",
@@ -220,7 +220,7 @@ function inName() {
     
     finalName = firstName + " " + lastName;
 
-    bio.name = finalName;
+    return finalName;
 }
 
 function displayWork()
