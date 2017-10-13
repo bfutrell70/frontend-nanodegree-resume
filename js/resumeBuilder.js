@@ -85,19 +85,29 @@ var projects = {
         // .append items to '#projects' to allow them to appear under the header.
         // each project will start with a HTMLprojectStart.
 
+        // NOTE in for (var xx in xxx) the xx is the INDEX within xxx.
         for (var proj in projects.projects)
         {
-            console.log(proj.title);
 			$("#projects").append(HTMLprojectStart);
-			// title
-			//var projTitle = HTMLprojectTitle.replace("%data%", proj.title);
-			//$('.project-entry:last').append(projTitle);
-			// dates
-			//var projDates = HTMLprojectDates.replace("%data%", proj.dates);
-			//$('.project-entry:last').append(projDates);
-			
-			// description
-			// images (loop)
+            
+            // title
+			var projTitle = HTMLprojectTitle.replace("%data%", projects.projects[proj].title);
+			$('.project-entry:last').append(projTitle);
+            
+            // dates
+			var projDates = HTMLprojectDates.replace("%data%", projects.projects[proj].dates);
+			$('.project-entry:last').append(projDates);
+            
+            // description
+             var projDescription = HTMLprojectDescription.replace("%data%", projects.projects[proj].description);
+			 $('.project-entry:last').append(projDescription);
+            
+             // images (loop)
+             for (var img in projects.projects[proj].images)
+             {
+                 var projImage = HTMLprojectImage.replace("%data%", projects.projects[proj].images[img]);
+                 $('.project-entry:last').append(projImage);
+             }
         }
     }
 };
@@ -222,8 +232,8 @@ if (bio.skills.length > 0)
     }
 }
 
-$('#main').append(internationalizeButton);
-
+//$('#main').append(internationalizeButton);
+projects.display();
 
 
 function inName() {
