@@ -100,15 +100,18 @@ var projects = {
 			$('.project-entry:last').append(projDates);
             
             // description
-             var projDescription = HTMLprojectDescription.replace("%data%", projects.projects[proj].description);
-			 $('.project-entry:last').append(projDescription);
+            var projDescription = HTMLprojectDescription.replace("%data%", projects.projects[proj].description);
+            $('.project-entry:last').append(projDescription);
             
-             // images (loop)
-             for (var img in projects.projects[proj].images)
-             {
-                 var projImage = HTMLprojectImage.replace("%data%", projects.projects[proj].images[img]);
-                 $('.project-entry:last').append(projImage);
-             }
+            // images (loop)
+            if (projects.projects[proj].images.length > 0)
+            {
+                for (var img in projects.projects[proj].images)
+                {
+                    var projImage = HTMLprojectImage.replace("%data%", projects.projects[proj].images[img]);
+                    $('.project-entry:last').append(projImage);
+                }
+            }
         }
     }
 };
