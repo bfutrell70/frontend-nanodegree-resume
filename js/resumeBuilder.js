@@ -83,9 +83,10 @@ var projects = {
     ],
     "display" : function() {
         // .append items to '#projects' to allow them to appear under the header.
-        // each project will start with a HTMLprojectStart.
+        // Each project will start with a HTMLprojectStart.
+        // HTMLprojectStart contains a div with the class project-entry.
 
-        // NOTE in for (var xx in xxx) the xx is the INDEX within xxx.
+        // NOTE in for (var xx in xxx) loops the xx is the INDEX within xxx.
         for (var proj in projects.projects)
         {
 			$("#projects").append(HTMLprojectStart);
