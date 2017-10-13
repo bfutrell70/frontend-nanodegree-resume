@@ -5,7 +5,14 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "name": "Launch Firefox nanodegree - Linux - index.html",
+            "name": "Launch Firefox nanodegree - wfutr - index.html",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch Firefox nanodegree - linux - index.html",
             "file": "${workspaceFolder}/index.html"
         },
         {
