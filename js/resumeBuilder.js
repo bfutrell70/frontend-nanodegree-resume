@@ -3,21 +3,21 @@ var work = {
         {
             "employer" : "Devil Dog Mfg.",
             "title" : "Warehouse Worker",
-            "location" : "Zebulon, NC and Spring Hope, NC",
+            "location" : "628 S Pine St, Spring Hope, NC 27882",
             "dates" : "1988-1995",
             "description": "Drove forklifts, color shaded cloth"
         },
         {
             "employer" : "Wizard Business Solutions, Inc./iBrain, Inc.",
             "title" : "Software Developer/Support Technician",
-            "location" : "Raleigh, NC",
+            "location" : "Raleigh, NC 27604",
             "dates" : "1995-2012",
             "description" : "Wrote custom software that interfaced with Peachtree Accounting, Peachtree Complete Accounting, Peachtree Quantum and Sage 50 to allow users to submit W-2, 1099-MISC, direct deposit ECH, and quarterly unemployemt reports electronically. Also wrote software to create payroll reports that comply with the Davis-Bacon Act. "
         },
         {
             "employer" : "Stay Online Corp.",
             "title" : "Web Developer",
-            "location" : "Creedmoor, NC",
+            "location" : "1506 Ivac Way, Creedmoor, NC 27522",
             "dates" : "2012-present",
             "description" : "Backend web development, inhouse support"
         }
@@ -125,7 +125,7 @@ var bio = {
         "mobile" : "111-222-3333",
         "email" : "bfutrel@gmail.com",
         "github" : "bfutrell70",
-        "location" : "Raleigh, NC"
+        "location" : "Raleigh, NC 27616"
     },
     "skills" : [ "SQL Server", "ASP.NET", "C#", "JavaScript", "Windows", "Linux" ]
 };
@@ -134,21 +134,21 @@ var education = {
     "schools" : [
         {
             "name": "Zebulon High School",
-            "city": "Zebulon, NC, US",
+            "location": "Zebulon, NC, US",
             "degree": "diploma",
             "yearOfGraduation": "1988",
             "majors": ["none"]
         },
         {
             "name": "Nash Technical Community College",
-            "city": "Rocky Mount, NC, US",
+            "location": "Rocky Mount, NC, US",
             "degree": "Associate in Applied Science",
             "yearOfGraduation": "1996",
             "majors": ["Microcomputer Systems Technology"]
         },
         {
             "name": "Wake Tech Community College",
-            "city": "Zebulon, NC, US",
+            "location": "Gaarner, NC, US",
             "degree": "Certificate in Visual Studio Programming",
             "yearOfGraduation": "2000?",
             "majors": ["none"]
@@ -237,9 +237,10 @@ if (bio.skills.length > 0)
 }
 
 //$('#main').append(internationalizeButton);
+
 projects.display();
 
-
+// used with the internationalize button
 function inName() {
     var finalName = bio.name;
 
@@ -300,78 +301,6 @@ $(document).click(function(loc) {
   }
 );
 
-// formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
-
-// var bio = {
-//     "name" : "Brian Futrell",
-//     "role" : "Web Developer",
-//     "contactInfo" : {
-//         mobile : "919-741-1959", 
-//         location: "4201 Ferriday Court Raleigh, NC 27616", 
-//         email: "bfutrel@gmail.com",
-//         github: "bfutrell70"
-//     },
-//     "bioPic" : "images/fry.jpg",
-//     "welcomeMessage" : "Nice to meet you!",
-//     "skills" : ["C#", "ASP.NET", "SQL Server"]
-// };
-
-// var formattedName;
-// var formattedRole;
-// var formattedImage;
-// var formattedWelcomeMessage;
-
-// var formattedEmail;
-// var formattedMobile;
-// var formattedGitHub;
-// var formattedLocation;
-// var formattedSkills;
-
-// formattedName = HTMLheaderName.replace("%data%", bio.name);
-// formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-// formattedImage = HTMLbioPic.replace("%data%", bio.bioPic);
-// formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-
-// formattedEmail = HTMLemail.replace("%data%", bio.contactInfo.email);
-// formattedMobile = HTMLmobile.replace("%data%", bio.contactInfo.mobile);
-// formattedGitHub = HTMLgithub.replace("%data%", bio.contactInfo.github);
-// formattedLocation = HTMLlocation.replace("%data%", bio.contactInfo.location);
-
-// formattedSkills = HTMLskills.replace("%data%", bio.skills.join(","));
-
-// // since the role and name need to be added before anything else prepend the role
-// // first, then the name so that the name will appear first.
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
-
-// var work = {};
-// work.position = "Web Developer";
-// work.employer = "StayOnline Corp";
-// work.yearsWorked = 4;
-// work.city = "Creedmoor";
-
-// var education = {};
-// education["name"] = "Wake Tech Community College";
-// education["years"] = "1998-2000";
-// education["city"] = "Raleigh, Garner";
-
-// $("#header").append(formattedMobile);
-// $("#header").append(formattedEmail);
-// $("#header").append(formattedGitHub);
-// $("#header").append(formattedLocation);
-
-// $("#header").append(formattedImage);
-
-// $("#header").append(formattedWelcomeMessage);
-// $("#header").append(HTMLskillsStart);
-// $("#header").append(formattedSkills);
-
-// var formattedWorkPosition;
-// var formattedSchoolName;
-
-// formattedWorkPosition = HTMLworkTitle.replace("%data%",work.position);
-// formattedSchoolName = HTMLschoolName.replace("%data%", education["name"]);
-// $("#header").append(formattedWorkPosition);
-// $("#header").append(formattedSchoolName);
-
-// // Lesson 3, Item 21
+// required to use the Google Maps code within helper.js
+// Lesson 5, item 15 - Customize the Portfolio
+$('#mapDiv').append(googleMap);
