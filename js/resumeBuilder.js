@@ -21,7 +21,35 @@ var work = {
             "dates" : "2012-present",
             "description" : "Backend web development, inhouse support"
         }
-    ]
+    ],
+    "display" : function() {
+        if (this.jobs.length > 0)
+        {
+            $('#workExperience').append(HTMLworkStart);
+            for (var eachJob in this.jobs)
+            {
+                //console.log(work.jobs[eachJob].employer + ' added!');
+        
+                if (work.jobs.hasOwnProperty(eachJob))
+                {
+                    var formattedEmployer = HTMLworkEmployer.replace("%data%", this.jobs[eachJob].employer);
+                    var formattedTitle = HTMLworkTitle.replace("%data%", this.jobs[eachJob].title);
+            
+                    //console.log(formattedEmployer + " " + formattedTitle);
+            
+                    // in index.html there is no element with a class of 'work-entry'....
+                    $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
+                    var formattedDates = HTMLworkDates.replace("%data%", this.jobs[eachJob].dates);
+                    $(".work-entry:last").append(formattedDates);
+                    // var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[eachJob].location);
+                    // $(".work-entry:last").append(formattedLocation);
+        
+                    var formattedDescription = HTMLworkDescription.replace("%data%", this.jobs[eachJob].description);
+                    $(".work-entry:last").append(formattedDescription);
+                }
+            }
+        }
+    }
 };
 
 var projects = {
@@ -87,20 +115,20 @@ var projects = {
         // HTMLprojectStart contains a div with the class project-entry.
 
         // NOTE in for (var xx in xxx) loops the xx is the INDEX within xxx.
-        for (var proj in projects.projects)
+        for (var proj in this.projects)
         {
 			$("#projects").append(HTMLprojectStart);
             
             // title
-			var projTitle = HTMLprojectTitle.replace("%data%", projects.projects[proj].title);
+			var projTitle = HTMLprojectTitle.replace("%data%", this.projects[proj].title);
 			$('.project-entry:last').append(projTitle);
             
             // dates
-			var projDates = HTMLprojectDates.replace("%data%", projects.projects[proj].dates);
+			var projDates = HTMLprojectDates.replace("%data%", this.projects[proj].dates);
 			$('.project-entry:last').append(projDates);
             
             // description
-            var projDescription = HTMLprojectDescription.replace("%data%", projects.projects[proj].description);
+            var projDescription = HTMLprojectDescription.replace("%data%", this.projects[proj].description);
             $('.project-entry:last').append(projDescription);
             
             // images (loop)
@@ -108,7 +136,7 @@ var projects = {
             {
                 for (var img in projects.projects[proj].images)
                 {
-                    var projImage = HTMLprojectImage.replace("%data%", projects.projects[proj].images[img]);
+                    var projImage = HTMLprojectImage.replace("%data%", this.projects[proj].images[img]);
                     $('.project-entry:last').append(projImage);
                 }
             }
@@ -127,7 +155,55 @@ var bio = {
         "github" : "bfutrell70",
         "location" : "Raleigh, NC 27616"
     },
-    "skills" : [ "SQL Server", "ASP.NET", "C#", "JavaScript", "Windows", "Linux" ]
+    "skills" : [ "SQL Server", "ASP.NET", "C#", "JavaScript", "Windows", "Linux" ],
+    "display" : function() {
+
+        // ----------------------------------------------------------
+        // NOTE: #header contains a <ul> with an ID of 'topContacts'
+        //       before anything else is added!
+        // ----------------------------------------------------------
+    
+        var formattedLocation = HTMLlocation.replace("%data%", this.contacts.location);
+        $("#topContacts").prepend(formattedLocation);
+    
+        var formattedGitHub = HTMLgithub.replace("%data%", this.contacts.github);
+        $("#topContacts").prepend(formattedGitHub);
+    
+        var formattedMobile = HTMLmobile.replace("%data%", this.contacts.mobile);
+        $("#topContacts").prepend(formattedMobile);
+    
+        var formattedEmail = HTMLemail.replace("%data%", this.contacts.email);
+        $("#topContacts").prepend(formattedEmail);
+    
+        // role + <HR>
+        var formattedRole = HTMLheaderRole.replace("%data%", this.role);
+        $("#header").prepend(formattedRole);
+    
+        // name before role
+        var formattedName = HTMLheaderName.replace("%data%", this.name);
+        $("#header").prepend(formattedName);
+    
+        // image after role
+        var formattedImage = HTMLbioPic.replace("%data%", this.biopic);
+        $("#header").append(formattedImage);
+    
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", this.welcomeMessage);
+        $("#header").append(formattedWelcomeMessage);
+        
+        if (this.skills.length > 0)
+        {
+            // 'Skills at a glance'
+            // also adds a UL with an ID of 'skills' and a class of 'flex-column'
+            $("#header").append(HTMLskillsStart);
+        
+            var formattedSkill;
+            for (var i = 0; i < bio.skills.length; i++)
+            {
+                formattedSkill = HTMLskills.replace("%data%", this.skills[i]);
+                $("#skills").append(formattedSkill);
+            }
+        }
+    }
 };
 
 var education = {
@@ -190,51 +266,52 @@ var education = {
 
 
 
-if (bio.skills.length > 0)
-{
-    // ----------------------------------------------------------
-    // NOTE: #header contains a <ul> with an ID of 'topContacts'
-    //       before anything else is added!
-    // ----------------------------------------------------------
+// if (bio.skills.length > 0)
+// {
+//     // ----------------------------------------------------------
+//     // NOTE: #header contains a <ul> with an ID of 'topContacts'
+//     //       before anything else is added!
+//     // ----------------------------------------------------------
 
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $("#topContacts").prepend(formattedLocation);
+//     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+//     $("#topContacts").prepend(formattedLocation);
 
-    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-    $("#topContacts").prepend(formattedGitHub);
+//     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+//     $("#topContacts").prepend(formattedGitHub);
 
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $("#topContacts").prepend(formattedMobile);
+//     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+//     $("#topContacts").prepend(formattedMobile);
 
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    $("#topContacts").prepend(formattedEmail);
+//     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+//     $("#topContacts").prepend(formattedEmail);
 
-    // role + <HR>
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").prepend(formattedRole);
+//     // role + <HR>
+//     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+//     $("#header").prepend(formattedRole);
 
-    // name before role
-    var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    $("#header").prepend(formattedName);
+//     // name before role
+//     var formattedName = HTMLheaderName.replace("%data%", bio.name);
+//     $("#header").prepend(formattedName);
 
-    // image after role
-    var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
-    $("#header").append(formattedImage);
+//     // image after role
+//     var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
+//     $("#header").append(formattedImage);
 
-    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header").append(formattedWelcomeMessage);
+//     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+//     $("#header").append(formattedWelcomeMessage);
 
-    // 'Skills at a glance'
-    // also adds a UL with an ID of 'skills' and a class of 'flex-column'
-    $("#header").append(HTMLskillsStart);
+//     // 'Skills at a glance'
+//     // also adds a UL with an ID of 'skills' and a class of 'flex-column'
+//     $("#header").append(HTMLskillsStart);
 
-    var formattedSkill;
-    for (var i = 0; i < bio.skills.length; i++)
-    {
-        formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#skills").append(formattedSkill);
-    }
-}
+//     var formattedSkill;
+//     for (var i = 0; i < bio.skills.length; i++)
+//     {
+//         formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+//         $("#skills").append(formattedSkill);
+//     }
+// }
+bio.display();
 
 //$('#main').append(internationalizeButton);
 
@@ -257,42 +334,43 @@ function inName() {
     return finalName;
 }
 
-function displayWork()
-{
-    // Lesson 5, Quiz 4: For-In loops
-    // 1) Write a for-in loop that iterates over all the jobs in your work object and
-    //    .append()s a new HTMLworkStart element for each one and ...
-    // 2) formats each job's employer with HTMLworkEmployer and each job title with
-    //    HTMLworkTitle ...
-    // 3) and .append()s a concatenation of employer and title each to the element with
-    //    class 'work-entry:last'.
+// function displayWork()
+// {
+//     // Lesson 5, Quiz 4: For-In loops
+//     // 1) Write a for-in loop that iterates over all the jobs in your work object and
+//     //    .append()s a new HTMLworkStart element for each one and ...
+//     // 2) formats each job's employer with HTMLworkEmployer and each job title with
+//     //    HTMLworkTitle ...
+//     // 3) and .append()s a concatenation of employer and title each to the element with
+//     //    class 'work-entry:last'.
 
-    $('#workExperience').append(HTMLworkStart);
-    for (var eachJob in work.jobs)
-    {
-        //console.log(work.jobs[eachJob].employer + ' added!');
+//     $('#workExperience').append(HTMLworkStart);
+//     for (var eachJob in work.jobs)
+//     {
+//         //console.log(work.jobs[eachJob].employer + ' added!');
 
-        if (work.jobs.hasOwnProperty(eachJob))
-        {
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[eachJob].employer);
-            var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[eachJob].title);
+//         if (work.jobs.hasOwnProperty(eachJob))
+//         {
+//             var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[eachJob].employer);
+//             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[eachJob].title);
     
-            //console.log(formattedEmployer + " " + formattedTitle);
+//             //console.log(formattedEmployer + " " + formattedTitle);
     
-            // in index.html there is no element with a class of 'work-entry'....
-            $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
-            var formattedDates = HTMLworkDates.replace("%data%", work.jobs[eachJob].dates);
-            $(".work-entry:last").append(formattedDates);
-            // var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[eachJob].location);
-            // $(".work-entry:last").append(formattedLocation);
+//             // in index.html there is no element with a class of 'work-entry'....
+//             $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
+//             var formattedDates = HTMLworkDates.replace("%data%", work.jobs[eachJob].dates);
+//             $(".work-entry:last").append(formattedDates);
+//             // var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[eachJob].location);
+//             // $(".work-entry:last").append(formattedLocation);
 
-            var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[eachJob].description);
-            $(".work-entry:last").append(formattedDescription);
-        }
-    }
-}
+//             var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[eachJob].description);
+//             $(".work-entry:last").append(formattedDescription);
+//         }
+//     }
+// }
 
-displayWork();
+// displayWork();
+work.display();
 
 // required to use the Google Maps code within helper.js
 // Lesson 5, item 15 - Customize the Portfolio
