@@ -86,7 +86,9 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var xLoc = loc.pageX;
+  var yLoc = loc.pageY;
+  logClicks(xLoc, yLoc);
 });
 
 

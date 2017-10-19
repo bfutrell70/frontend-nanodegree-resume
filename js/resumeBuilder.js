@@ -294,13 +294,6 @@ function displayWork()
 
 displayWork();
 
-$(document).click(function(loc) {
-    var xLoc = loc.pageX;
-    var yLoc = loc.pageY;
-    logClicks(xLoc, yLoc);
-  }
-);
-
 // required to use the Google Maps code within helper.js
 // Lesson 5, item 15 - Customize the Portfolio
 $('#mapDiv').append(googleMap);
