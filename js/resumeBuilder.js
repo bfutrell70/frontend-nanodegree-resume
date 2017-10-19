@@ -28,21 +28,16 @@ var work = {
             $('#workExperience').append(HTMLworkStart);
             for (var eachJob in this.jobs)
             {
-                //console.log(work.jobs[eachJob].employer + ' added!');
         
                 if (work.jobs.hasOwnProperty(eachJob))
                 {
                     var formattedEmployer = HTMLworkEmployer.replace("%data%", this.jobs[eachJob].employer);
                     var formattedTitle = HTMLworkTitle.replace("%data%", this.jobs[eachJob].title);
             
-                    //console.log(formattedEmployer + " " + formattedTitle);
-            
                     // in index.html there is no element with a class of 'work-entry'....
                     $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
                     var formattedDates = HTMLworkDates.replace("%data%", this.jobs[eachJob].dates);
                     $(".work-entry:last").append(formattedDates);
-                    // var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[eachJob].location);
-                    // $(".work-entry:last").append(formattedLocation);
         
                     var formattedDescription = HTMLworkDescription.replace("%data%", this.jobs[eachJob].description);
                     $(".work-entry:last").append(formattedDescription);
@@ -261,7 +256,11 @@ var education = {
             "degree": "How to Use Git and GitHub",
             "dates": "2016",
         }
-    ]
+    ],
+    "display" : function() {
+        // parent div for education has an ID of "education"
+        // JavaScript on the index page checks for a class name of "education-entry"
+    }
 };
 
 
