@@ -205,56 +205,59 @@ var education = {
     "schools" : [
         {
             "name": "Zebulon High School",
-            "location": "Zebulon, NC, US",
+            "location": "Zebulon, NC",
             "degree": "diploma",
-            "yearOfGraduation": "1988",
-            "majors": ["none"]
+            "majors": ["none"],
+            "dates": 1988,
+            "url": "https://www.facebook.com/zebulonhighalumni/?rf=112990792068796"
         },
         {
             "name": "Nash Technical Community College",
-            "location": "Rocky Mount, NC, US",
+            "location": "Rocky Mount, NC",
             "degree": "Associate in Applied Science",
-            "yearOfGraduation": "1996",
-            "majors": ["Microcomputer Systems Technology"]
+            "majors": ["Microcomputer Systems Technology"],
+            "dates": 1996,
+            "url": "https://www.nashcc.edu/"
         },
         {
             "name": "Wake Tech Community College",
-            "location": "Gaarner, NC, US",
+            "location": "Gaarner, NC",
             "degree": "Certificate in Visual Studio Programming",
-            "yearOfGraduation": "2000?",
-            "majors": ["none"]
+            "majors": ["none"],
+            "dates": 2000,
+            "url": "https://www.waketech.edu/"
         }
     ],
     "onlineCourses" : [
         {
-            "name": "StackSkills",
+            "title": "Learn Bootstrap Development By Building 10 Projects",
+            "school": "StackSkills",
             "url": "www.stackskills.com",
-            "degree": "Learn Bootstrap Development By Building 10 Projects",
-            "dates": "2014",
+            "dates": 2014,
         },
         {
-            "name": "StackSkills",
+            "title": "Projects in JavaScript & JQuery",
+            "school": "StackSkills",
             "url": "www.stackskills.com",
-            "degree": "Projects in JavaScript & JQuery",
-            "dates": "2015",
+            "dates": 2015,
         },
         {
-            "name": "StackSkills",
+            "title": "Learn Bootstrap Development By Building 10 Projects",
+            "school": "StackSkills",
             "url": "www.stackskills.com",
-            "degree": "Learn Bootstrap Development By Building 10 Projects",
-            "dates": "2015",
+            "dates": 2015,
         },
         {
-            "name": "Udacity",
+            "title": "How to Use Git and GitHub",
+            "school": "Udacity",
             "url": "www.udacity.com",
-            "degree": "How to Use Git and GitHub",
-            "dates": "2016",
+            "dates": 2016,
         },
         {
-            "name": "Udacity",
+            "title": "How to Use Git and GitHub",
+            "school": "Udacity",
             "url": "www.udacity.com",
-            "degree": "How to Use Git and GitHub",
-            "dates": "2016",
+            "dates": 2016,
         }
     ],
     "display" : function() {
@@ -271,7 +274,7 @@ var education = {
                 $(".education-entry:last").append(formattedNameDegree);
                 
                 // dates
-                var formattedDates = HTMLschoolDates.replace("%data%", this.schools[school].yearOfGraduation);
+                var formattedDates = HTMLschoolDates.replace("%data%", this.schools[school].dates);
                 $(".education-entry:last").append(formattedDates);
 
                 // location
@@ -281,6 +284,9 @@ var education = {
                 // major
                 var formattedMajor = HTMLschoolMajor.replace("%data%", this.schools[school].majors);
                 $(".education-entry:last").append(formattedMajor);
+
+                // URL
+                // no HTML helper string for URL.
             }
         }
 
@@ -292,8 +298,8 @@ var education = {
                 $("#education").append(HTMLschoolStart);
 
                 // title + school
-                var formattedTitleSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[online].name);
-                formattedTitleSchool += HTMLonlineTitle.replace("%data%", this.onlineCourses[online].degree);
+                var formattedTitleSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[online].school);
+                formattedTitleSchool += HTMLonlineTitle.replace("%data%", this.onlineCourses[online].title);
                 $(".education-entry:last").append(formattedTitleSchool);
                 
                 // dates
@@ -308,60 +314,16 @@ var education = {
     }
 };
 
-
-
-// if (bio.skills.length > 0)
-// {
-//     // ----------------------------------------------------------
-//     // NOTE: #header contains a <ul> with an ID of 'topContacts'
-//     //       before anything else is added!
-//     // ----------------------------------------------------------
-
-//     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-//     $("#topContacts").prepend(formattedLocation);
-
-//     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-//     $("#topContacts").prepend(formattedGitHub);
-
-//     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-//     $("#topContacts").prepend(formattedMobile);
-
-//     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-//     $("#topContacts").prepend(formattedEmail);
-
-//     // role + <HR>
-//     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-//     $("#header").prepend(formattedRole);
-
-//     // name before role
-//     var formattedName = HTMLheaderName.replace("%data%", bio.name);
-//     $("#header").prepend(formattedName);
-
-//     // image after role
-//     var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
-//     $("#header").append(formattedImage);
-
-//     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-//     $("#header").append(formattedWelcomeMessage);
-
-//     // 'Skills at a glance'
-//     // also adds a UL with an ID of 'skills' and a class of 'flex-column'
-//     $("#header").append(HTMLskillsStart);
-
-//     var formattedSkill;
-//     for (var i = 0; i < bio.skills.length; i++)
-//     {
-//         formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-//         $("#skills").append(formattedSkill);
-//     }
-// }
 bio.display();
+projects.display();
+education.display();
+work.display();
+
+// required to use the Google Maps code within helper.js
+// Lesson 5, item 15 - Customize the Portfolio
+$('#mapDiv').append(googleMap);
 
 //$('#main').append(internationalizeButton);
-
-projects.display();
-
-education.display();
 
 // used with the internationalize button
 function inName() {
@@ -379,45 +341,3 @@ function inName() {
 
     return finalName;
 }
-
-// function displayWork()
-// {
-//     // Lesson 5, Quiz 4: For-In loops
-//     // 1) Write a for-in loop that iterates over all the jobs in your work object and
-//     //    .append()s a new HTMLworkStart element for each one and ...
-//     // 2) formats each job's employer with HTMLworkEmployer and each job title with
-//     //    HTMLworkTitle ...
-//     // 3) and .append()s a concatenation of employer and title each to the element with
-//     //    class 'work-entry:last'.
-
-//     $('#workExperience').append(HTMLworkStart);
-//     for (var eachJob in work.jobs)
-//     {
-//         //console.log(work.jobs[eachJob].employer + ' added!');
-
-//         if (work.jobs.hasOwnProperty(eachJob))
-//         {
-//             var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[eachJob].employer);
-//             var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[eachJob].title);
-    
-//             //console.log(formattedEmployer + " " + formattedTitle);
-    
-//             // in index.html there is no element with a class of 'work-entry'....
-//             $(".work-entry:last").append(formattedEmployer + " " + formattedTitle);
-//             var formattedDates = HTMLworkDates.replace("%data%", work.jobs[eachJob].dates);
-//             $(".work-entry:last").append(formattedDates);
-//             // var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[eachJob].location);
-//             // $(".work-entry:last").append(formattedLocation);
-
-//             var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[eachJob].description);
-//             $(".work-entry:last").append(formattedDescription);
-//         }
-//     }
-// }
-
-// displayWork();
-work.display();
-
-// required to use the Google Maps code within helper.js
-// Lesson 5, item 15 - Customize the Portfolio
-$('#mapDiv').append(googleMap);
