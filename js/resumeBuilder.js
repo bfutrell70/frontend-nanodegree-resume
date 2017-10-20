@@ -260,6 +260,40 @@ var education = {
     "display" : function() {
         // parent div for education has an ID of "education"
         // JavaScript on the index page checks for a class name of "education-entry"
+        if (this.schools.length > 0 )
+        {
+            for (var school in this.schools)
+            {
+                $("#education").append(HTMLschoolStart);
+                // name + degree
+                var formattedNameDegree = HTMLschoolName.replace("%data%", this.schools[school].name);
+                formattedNameDegree += HTMLschoolDegree.replace("%data%", this.schools[school].degree);
+                $(".education-entry:last").append(formattedNameDegree);
+                
+                // dates
+                var formattedDates = HTMLschoolDates.replace("%data%", this.schools[school].yearOfGraduation);
+                $(".education-entry:last").append(formattedDates);
+
+                // location
+                var formattedLocation = HTMLschoolLocation.replace("%data%", this.schools[school].location);
+                $(".education-entry:last").append(formattedLocation);
+
+                // major
+                var formattedMajor = HTMLschoolMajor.replace("%data%", this.schools[school].majors);
+                $(".education-entry:last").append(formattedMajor);
+            }
+        }
+
+        if (this.onlineCourses.length > 0)
+        {
+            $("#education").append(HTMLonlineClasses);
+            for (var online in this.onlineCourses)
+            {
+                // title + school
+                // dates
+                // url
+            }
+        }
     }
 };
 
