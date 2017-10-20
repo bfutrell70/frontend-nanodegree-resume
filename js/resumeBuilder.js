@@ -289,9 +289,20 @@ var education = {
             $("#education").append(HTMLonlineClasses);
             for (var online in this.onlineCourses)
             {
+                $("#education").append(HTMLschoolStart);
+
                 // title + school
+                var formattedTitleSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[online].name);
+                formattedTitleSchool += HTMLonlineTitle.replace("%data%", this.onlineCourses[online].degree);
+                $(".education-entry:last").append(formattedTitleSchool);
+                
                 // dates
+                var formattedDates = HTMLonlineDates.replace("%data%", this.onlineCourses[online].dates);
+                $(".education-entry:last").append(formattedDates);
+
                 // url
+                var formattedUrl = HTMLonlineURL.replace("%data%", this.onlineCourses[online].url);
+                $(".education-entry:last").append(formattedUrl);
             }
         }
     }
@@ -349,6 +360,8 @@ bio.display();
 //$('#main').append(internationalizeButton);
 
 projects.display();
+
+education.display();
 
 // used with the internationalize button
 function inName() {
